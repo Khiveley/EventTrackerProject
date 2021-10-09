@@ -17,6 +17,12 @@ This program implements CRUD (Create, Read, Update, and Delete) functionality ut
 * Java
 * Bash Terminal
 
+# Expected Routes
+
+| Return Type | Route          | Functionality   |
+|-------------|----------------|-----------------|
+|`List<Study` |GET api/studies | Get all studies |
+
 # Lessons Learned
 
 This project continued to reinforce our learning to work with Object Oriented Programming and introduced working with request mappings, repositories, and services outside of the examples that were provided in our classroom setting.
