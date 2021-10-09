@@ -18,3 +18,5 @@ This program implements CRUD (Create, Read, Update, and Delete) functionality ut
 * Bash Terminal
 
 # Lessons Learned
+
+This project continued to reinforce our learning to work with Object Oriented Programming and introduced working with request mappings, repositories, and services outside of the examples that were provided in our classroom setting.
