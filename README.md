@@ -19,9 +19,9 @@ This program implements CRUD (Create, Read, Update, and Delete) functionality ut
 
 # Expected Routes
 
-| Return Type | Route          | Functionality   |
-|-------------|----------------|-----------------|
-|`List<Study` |GET api/studies | Get all studies |
+| Return Type | Route          | Functionality    |
+|-------------|----------------|------------------|
+|`List<Study>` |GET api/studies | Get all studies |
 
 # Lessons Learned
 
