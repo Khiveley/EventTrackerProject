@@ -49,9 +49,9 @@ class StudyTest {
 		assertEquals(2021, study.getStudyDate().getYear());
 		assertEquals(10, study.getStudyDate().getMonthValue());
 		assertEquals(8, study.getStudyDate().getDayOfMonth());
-		assertEquals(16, study.getStart().getHour());
+		assertEquals(17, study.getStart().getHour());
 		assertEquals(30, study.getStart().getMinute());
-		assertEquals(17, study.getEnd().getHour());
+		assertEquals(18, study.getEnd().getHour());
 		assertEquals(15, study.getEnd().getMinute());
 		assertEquals("Still not comfortable with lambdas.  Getting there.", study.getComment());
 		assertEquals(
