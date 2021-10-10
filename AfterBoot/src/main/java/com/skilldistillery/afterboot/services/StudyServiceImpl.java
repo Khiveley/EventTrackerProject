@@ -48,10 +48,11 @@ public class StudyServiceImpl implements StudyService {
 	}
 
 	@Override
-	public Study update(Integer studyId, Study study) {
-	Optional<Study> studyOpt = studRepo.findById(studyId);
+	public Study update(Integer id, Study study) {
+	Optional<Study> studyOpt = studRepo.findById(id);
 	Study managedStudy = null;
 	if(studyOpt.isPresent()) {
+		managedStudy = studyOpt.get();
 		managedStudy.setLanguage(study.getLanguage());
 		managedStudy.setFocus(study.getFocus());
 		managedStudy.setStudyDate(study.getStudyDate());

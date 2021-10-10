@@ -2,7 +2,7 @@ package com.skilldistillery.afterboot.controllers;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,12 +30,10 @@ public class StudyController {
 	public List<Study> studyIndex() {
 		return studSvc.getAllStudies();
 	}
+
 //	Get one study by id.
 	@GetMapping("studies/{id}")
-public Study findStudy(
-		@PathVariable Integer id,
-		HttpServletResponse res
-		) {
+	public Study findStudy(@PathVariable Integer id, HttpServletResponse res) {
 		Study study = studSvc.findById(id);
 		if (study == null) {
 			res.setStatus(404);
@@ -43,14 +41,9 @@ public Study findStudy(
 		return study;
 	}
 
-
 //  Create a new study
 	@PostMapping("studies")
-	public Study addStudy(
-			@RequestBody Study study, 
-			HttpServlet req, 
-			HttpServlet res
-			) {
+	public Study addStudy(@RequestBody Study study, HttpServletRequest req, HttpServletResponse res) {
 		try {
 			study = studSvc.addStudy(study);
 			res.setStatus(201);
@@ -67,9 +60,9 @@ public Study findStudy(
 
 //	Replace an existing study
 	@PutMapping("studies/{id}")
-	public Study updateStudy(@PathVariable Integer studyId, @RequestBody Study study, HttpServletResponse res) {
+	public Study updateStudy(@PathVariable Integer id, @RequestBody Study study, HttpServletResponse res) {
 		try {
-			study = studSvc.update(studyId, study);
+			study = studSvc.update(id, study);
 			if (study == null) {
 				res.setStatus(404);
 			}
@@ -83,19 +76,18 @@ public Study findStudy(
 
 //	Delete an existing study
 	@DeleteMapping("studies/{id}")
-	public void deleteStudy(
-			@PathVariable Integer id,
-			HttpServletResponse res
-			){
+	public void deleteStudy(@PathVariable Integer id, HttpServletResponse res) {
 		try {
-			if (studSvc.deleteStudy(id));
-			res.setStatus(204);
-		} else {
-			res.setStatus(404);
+			if (studSvc.deleteStudy(id)) {
+				res.setStatus(204);
+			} else {
+				res.setStatus(404);
+			}
+		} catch (
+
+		Exception e) {
+			System.err.println(e);
+			res.setStatus(400);
 		}
-		}catch(Exception e){
-		System.err.println(e);
-		res.setStatus(400);
 	}
 }
-
