@@ -2,22 +2,22 @@
 
 # Overview
 
-This program implements CRUD (Create, Read, Update, and Delete) functionality utilizing Spring Data JPA and RESTful services.  I want to have a good structure in place for continuing to learn and code after this bootcamp completes; hence, the title for my app is "AfterBoot."  
+This program implements CRUD (Create, Read, Update, and Delete) functionality utilizing Spring Data JPA and RESTful services.  I want to have a good structure in place for continuing to learn and code after this bootcamp completes; hence, the title for my app is "AfterBoot."  Creating an online study log will be useful since I'll already be working at the computer and have a means to input all of the information regarding study sessions for the day.
 
 # How to Use
 
 # Technologies Used
 
-* Spring Tool Suite
+* Spring Tool Suite (Spring Data JPA, Spring Boot)
 * MySQL Workbench (SQL)
 * Atom
-* Spring Boot
 * Gradle
 * Postman
 * Java
+* MAMP
 * Bash Terminal
 
-# Expected Routes
+# Application Expected Routes
 
 | Return Type  | Route                   | Functionality                   |
 |--------------|-------------------------|---------------------------------|
@@ -29,4 +29,4 @@ This program implements CRUD (Create, Read, Update, and Delete) functionality ut
 
 # Lessons Learned
 
-This project continued to reinforce our learning to work with Object Oriented Programming and introduced working with request mappings, repositories, and services outside of the examples that were provided in our classroom setting.
+This project continued to reinforce my learning to work with Object Oriented Programming and introduced working with request mappings, repositories, and services outside of the examples that were provided in our classroom setting. I was hesitant to work with Date and Time after some of the other projects; however, since I really want to be able to visualize Date and Time data once the front end is built I forged ahead.  In my Postman tests for CREATE and UPDATE functions, I kept getting null for a return on my studyDate field and I spent the longest time trying to determine why the field would return via both of the READ functions properly.  I had provided the SQL syntax study_date instead of studyDate.  Updating the field label/name in my methods then allowed for them to work correctly.
