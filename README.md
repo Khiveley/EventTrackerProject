@@ -6,7 +6,7 @@ This program implements CRUD (Create, Read, Update, and Delete) functionality ut
 
 # How to Use
 
-This project is provisioned to my AWS instance: 3.143.202.149.  In the browser of your choosing, please enter the following:  3.143.202.149/AfterBoot.  Additional information about full application use will be provided once the front end code has been implemented.  Stay Tuned!
+This project is provisioned to Tomcat: http://3.143.202.149:8080/AfterBoot/api/studies  Additional information about full application use will be provided once the front end code has been implemented.  Stay Tuned!
 
 # Technologies Used
 
