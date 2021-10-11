@@ -23,7 +23,6 @@ public class Study {
 
 	private String focus;
 	
-//	@JsonFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "study_date")
 	private LocalDate studyDate;
 
