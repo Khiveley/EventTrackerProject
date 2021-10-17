@@ -18,6 +18,9 @@ This project is provisioned to Tomcat: http://3.143.202.149:8080/AfterBoot/api/s
 * Java
 * MAMP
 * Bash Terminal
+* VS Code
+* XMLHttpRequests
+* JavaScript
 
 # Application Expected Routes
 
