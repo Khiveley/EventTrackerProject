@@ -7,6 +7,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { StudyListComponent } from './components/study-list/study-list.component';
 import { StudyService } from './services/study.service';
 import { HttpClientModule} from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { HttpClientModule} from '@angular/common/http'
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     NgbModule,
     HttpClientModule
   ],
   providers: [
-    StudyService
+    StudyService,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })
