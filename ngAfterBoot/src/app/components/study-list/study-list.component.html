@@ -1,3 +1,4 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <h1>After Boot Study Sessions</h1>
 <hr>
 
@@ -22,9 +23,10 @@
   <tbody>
     <tr *ngFor="let study of studies">
       <td (click)="displayStudy(study)">{{ study.id }}</td>
-      <td (click)="displayStudy(study)"><img class = "study" src="{{study.imageUrl}}" /> </td>
+      <td (click)="displayStudy(study)"><img class = "studymaterials" src="{{study.imageUrl}}" /> </td>
       <td (click)="displayStudy(study)">{{ study.studyDate}}</td>
       <td (click)="displayStudy(study)">{{ study.start}}</td>
+      <td>{{calcDuration();</td>
       <td (click)="displayStudy(study)">{{ study.end}}</td>
       <td (click)="displayStudy(study)">{{ study.focus}}</td>
       <td (click)="displayStudy(study)">{{ study.comment}}</td>
@@ -35,7 +37,12 @@
   </tbody>
 </table>
 
-<div id='studyDetails' *ngIf="selected">
+<!-- <div *ngIf=!selected">
+  <input type="date" name="study" [(ngModel)]="newStudy"/>
+  <button (click)="addStudy(newStudy)">Add Study</button>
+</div>
+</div>
+div id='studyDetails' *ngIf="selected && !editStudy"
   <p>Id:{{selected.id}}</p>
   <p>Study Date:{{selected.studyDate}}</p>
   <p>Start:{{selected.start}}</p>
@@ -44,8 +51,8 @@
   <p>Comment:{{selected.comment}}</p>
   <p>Pages:{{selected.pages}}</p>
   <p>Source:{{selected.source}}</p>
-  <p></p>
-</div>
+  <button class= "btn btn-success"(click)="setEditStudy()">Edit</button>
+</div> -->
 
 <div *ngIf="editStudy">
 <input type="date" name="studyDate" [(ngModel)]="editStudy.studyDate">
@@ -58,3 +65,5 @@
 <button class = "btn btn-danger"(click)="editStudy = null">Cancel</button>
 <button class = "btn btn-success"(click)="updateStudy(editStudy)">Save</button>
 </div>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

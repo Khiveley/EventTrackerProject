@@ -94,5 +94,9 @@ export class StudyListComponent implements OnInit {
       }
     );
   }
+
+  // calcDuration ParseInt(end: string, start: string){
+  //   return Math.round((end-start));
+  // }
 }
 
