@@ -4,6 +4,7 @@ import { catchError} from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { Study } from 'src/app/models/study';
 import { DatePipe } from '@angular/common';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import { DatePipe } from '@angular/common';
 export class StudyService {
 
   private baseUrl = 'http://localhost:8087/';
-  private url = this.baseUrl + 'api/studies';
+  private url = environment.baseUrl + 'api/studies';
 
 
 
