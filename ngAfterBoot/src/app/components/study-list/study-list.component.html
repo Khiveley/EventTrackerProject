@@ -1,8 +1,60 @@
 <h1>After Boot Study Sessions</h1>
 <hr>
 
-<ul>
-<li *ngFor="let study of studies">{{study.language}}</li>
-</ul>
+<!-- <ul>
+  <li *ngFor="let study of studies">{{study.id}}{{study.studyDate}}</li>
+</ul> -->
 
+<table class="table table-striped table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Id</th>
+      <th>Image</th>
+      <th>Study Date</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Focus</th>
+      <th>Comment</th>
+      <th>Pages</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let study of studies">
+      <td (click)="displayStudy(study)">{{ study.id }}</td>
+      <td (click)="displayStudy(study)"><img class = "study" src="{{study.imageUrl}}" /> </td>
+      <td (click)="displayStudy(study)">{{ study.studyDate}}</td>
+      <td (click)="displayStudy(study)">{{ study.start}}</td>
+      <td (click)="displayStudy(study)">{{ study.end}}</td>
+      <td (click)="displayStudy(study)">{{ study.focus}}</td>
+      <td (click)="displayStudy(study)">{{ study.comment}}</td>
+      <td (click)="displayStudy(study)">{{ study.pages}}</td>
+      <td (click)="displayStudy(study)">{{ study.source}}</td>
+      <td><button (click)="deleteStudy(study.id)">X</button></td>
+    </tr>
+  </tbody>
+</table>
 
+<div id='studyDetails' *ngIf="selected">
+  <p>Id:{{selected.id}}</p>
+  <p>Study Date:{{selected.studyDate}}</p>
+  <p>Start:{{selected.start}}</p>
+  <p>End:{{selected.end}}</p>
+  <p>Focus:{{selected.focus}} </p>
+  <p>Comment:{{selected.comment}}</p>
+  <p>Pages:{{selected.pages}}</p>
+  <p>Source:{{selected.source}}</p>
+  <p></p>
+</div>
+
+<div *ngIf="editStudy">
+<input type="date" name="studyDate" [(ngModel)]="editStudy.studyDate">
+<input type="time" name="start" [(ngModel)]="editStudy.start">
+<input type="time" name="end" [(ngModel)]="editStudy.end">
+<input type="text" name="focus" [(ngModel)]="editStudy.focus">
+<input type="text" name="comment" [(ngModel)]="editStudy.comment">
+<input type="text" name="pages" [(ngModel)]="editStudy.pages">
+<input type="text" name="source" [(ngModel)]="editStudy.source">
+<button class = "btn btn-danger"(click)="editStudy = null">Cancel</button>
+<button class = "btn btn-success"(click)="updateStudy(editStudy)">Save</button>
+</div>

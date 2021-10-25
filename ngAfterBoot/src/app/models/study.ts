@@ -11,6 +11,7 @@ export class Study {
   pages: string;
   source: string;
 
+
   constructor(
     id: number = 0,
     language: string = '',
@@ -21,7 +22,8 @@ export class Study {
     comment: string = '',
     imageUrl: string = '',
     pages: string = '',
-    source: string = ''
+    source: string = '',
+
   ){
     this.id = id;
     this.language = language;
